@@ -15,7 +15,7 @@ services:
       ID_DETECTION_CONFIDENCE: 0.2
       QUALITY_THRESHOLD: 0.7
 
-      GEMINI_API_KEY: "AIzaSyBneT1hSjDWH9WXvZGcgZVLlgtsaSJ4gpA"
+      GEMINI_API_KEY: "YOUR API KEY"
 
     restart: unless-stopped
 
