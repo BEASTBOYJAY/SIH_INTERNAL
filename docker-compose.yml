@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  video-kyc-gpu:
+    container_name: video-kyc-gpu
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      DEVICE: cuda:0
+      ID_DETECTION_MODEL_PATH: "id_detector.pt"
+      FACE_DETECTION_MODEL_PATH: "yolov8x-face.pt"
+      FACE_RECOGNITION_THRESHOLD: 0.7
+      FACE_DETECTION_CONFIDENCE: 0.5
+      ID_DETECTION_CONFIDENCE: 0.2
+      QUALITY_THRESHOLD: 0.7
+
+      GEMINI_API_KEY: "AIzaSyBneT1hSjDWH9WXvZGcgZVLlgtsaSJ4gpA"
+
+    restart: unless-stopped
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    
