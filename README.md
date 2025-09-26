@@ -78,6 +78,7 @@ The application requires an API key for the Google Gemini LLM to extract text fr
 ```env
 GEMINI_API_KEY="YOUR_GOOGLE_GEMINI_API_KEY"
 ```
+3. **Ask this repository owner for the pretrained model**
 
 ## ▶️ Running the Application
 
